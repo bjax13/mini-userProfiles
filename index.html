@@ -6,11 +6,26 @@
     <link rel="stylesheet" href="styles.css"></link>
 </head>
 <body ng-controller="MainController">
-    
-    {{thisAppIsBroken}}
-    
+
+    <!-- {{thisAppIsBroken}} -->
+    <!-- <div ng-repeat="users">
+
+    </div> -->
+    <!-- <ul>
+      <li ng-repeat="user in users"> {{user.first_name}} </li>
+
+    </ul> -->
+
+    <div ng-repeat="user in users" ng-class="{favorite: user.isFavorite}">
+       <span>{{user.first_name}} {{user.last_name}}</span><br>
+       <img ng-src="{{user.avatar}}">
+       <button ng-click="toggleFavorite(user.id)">Toggle Favorite</button>
+    </div>
+
+
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
-     <script src="app.js"></script>
-     <script src="controller.js"></script>
+     <script src="./app.js"></script>
+     <script src="./controller.js"></script>
+     <script src="./mainService.js"></script>
 </body>
 </html>
